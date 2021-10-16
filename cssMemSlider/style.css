@@ -41,6 +41,7 @@ body {
 }
 .slider-row {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 }
@@ -61,16 +62,29 @@ body {
   padding-left: 1px;
 }
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
   margin: 5px;
-  background-color: #71abfe;
-  border: 3px solid #71abfe;
-  border-radius: 50%;
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.dot:hover {
+.dot:first-child {
+  margin-left: 0;
+}
+.dot:last-child {
+  margin-right: 0;
+}
+.dot-inner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #71abfe;
+  border: 3px solid #71abfe;
+  border-radius: 50%;
+  margin: 7px;
+}
+.dot:hover .dot-inner {
   background-color: #fff;
   border: 3px solid #fff;
 }
@@ -121,10 +135,71 @@ input[type="radio"] {
 #meme5:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
   margin-left: -80%;
 }
-#meme1:checked ~ .slider-row .slider-dots label:nth-child(1),
-#meme2:checked ~ .slider-row .slider-dots label:nth-child(2),
-#meme3:checked ~ .slider-row .slider-dots label:nth-child(3),
-#meme4:checked ~ .slider-row .slider-dots label:nth-child(4),
-#meme5:checked ~ .slider-row .slider-dots label:nth-child(5) {
+#meme1:checked ~ .slider-row .slider-dots .dot .dot-inner-1,
+#meme2:checked ~ .slider-row .slider-dots .dot .dot-inner-2,
+#meme3:checked ~ .slider-row .slider-dots .dot .dot-inner-3,
+#meme4:checked ~ .slider-row .slider-dots .dot .dot-inner-4,
+#meme5:checked ~ .slider-row .slider-dots .dot .dot-inner-5 {
   background-color: transparent;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    max-width: 500px;
+    margin: 30% auto;
+  }
+  .slider-inner {
+    height: 250px;
+  }
+  .slide img {
+    max-height: 250px;
+  }
+  .s4 img {
+    margin-top: 0;
+  }
+  .s5 img {
+    margin-top: 0;
+  }
+  .slider-row {
+    display: block;
+  }
+  .slider-dots {
+    max-width: 38%;
+    margin: 0 auto 20px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .wrapper {
+    max-width: 400px;
+  }
+  .slider-inner {
+    height: 225px;
+  }
+  .slide img {
+    max-height: 225px;
+  }
+  .s2 img,
+  .s4 img {
+    border-radius: 10px;
+  }
+  .slider-dots {
+    max-width: 35%;
+  }
+  .dot {
+    width: 20px;
+    height: 20px;
+  }
+  .dot-inner {
+    margin: 2px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .wrapper {
+    max-width: 310px;
+  }
+  .slider-inner {
+    height: 175px;
+  }
+  .slide img {
+    max-height: 175px;
+  }
 }
