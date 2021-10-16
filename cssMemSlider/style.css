@@ -202,4 +202,14 @@ input[type="radio"] {
   .slide img {
     max-height: 175px;
   }
+  .slider-dots {
+    max-width: 37%;
+  }
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+  .dot-inner {
+    margin: 0;
+  }
 }
