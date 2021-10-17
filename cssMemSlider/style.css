@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #25282a;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+}
+.wrapper {
+  max-width: 100%;
+  margin: 10% 20%;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+.slider-inner {
+  width: 500%;
+  max-height: 50vh;
+  display: flex;
+}
+.slide {
+  width: 20%;
+  border-radius: 10px;
+  transition: all 0.8s ease;
+}
+.slide img {
+  display: block;
+  text-align: center;
+  max-width: 100%;
+  max-height: 50vh;
+  margin: auto;
+}
+.slider-row {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-dots,
+.slider-text-inner {
+  display: flex;
+}
+.slider-text {
+  width: 50%;
+  overflow: hidden;
+}
+.slider-text-inner {
+  width: 500%;
+}
+.slider-text-inner p {
+  width: 20%;
+  transition: all 0.8s ease;
+  padding-left: 1px;
+}
+.dot {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dot:first-child {
+  margin-left: 0;
+}
+.dot:last-child {
+  margin-right: 0;
+}
+.dot-inner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #71abfe;
+  border: 3px solid #71abfe;
+  border-radius: 50%;
+  margin: 7px;
+}
+.dot:hover .dot-inner {
+  background-color: #fff;
+  border: 3px solid #fff;
+}
+input[type="radio"] {
+  display: none;
+}
+.s1 {
+  background-color: #dadf69;
+}
+.s2 {
+  background-color: #b6b4a9;
+}
+.s2 img {
+  margin-top: 3%;
+}
+.s3 {
+  background-color: #a19593;
+}
+.s3 img {
+  margin-top: 5%;
+}
+.s4 {
+  background-color: #43494b;
+}
+.s4 img {
+  margin-top: 10%;
+}
+.s5 {
+  background-color: #fff;
+}
+.s5 img {
+  margin-top: 8%;
+}
+#meme1:checked ~ .slider-inner .s1,
+#meme1:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
+  margin-left: 0;
+}
+
+#meme2:checked ~ .slider-inner .s1,
+#meme2:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
+  margin-left: -20%;
+}
+
+#meme3:checked ~ .slider-inner .s1,
+#meme3:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
+  margin-left: -40%;
+}
+
+#meme4:checked ~ .slider-inner .s1,
+#meme4:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
+  margin-left: -60%;
+}
+#meme5:checked ~ .slider-inner .s1,
+#meme5:checked ~ .slider-row .slider-text .slider-text-inner .p1 {
+  margin-left: -80%;
+}
+#meme1:checked ~ .slider-row .slider-dots .dot .dot-inner-1,
+#meme2:checked ~ .slider-row .slider-dots .dot .dot-inner-2,
+#meme3:checked ~ .slider-row .slider-dots .dot .dot-inner-3,
+#meme4:checked ~ .slider-row .slider-dots .dot .dot-inner-4,
+#meme5:checked ~ .slider-row .slider-dots .dot .dot-inner-5 {
+  background-color: transparent;
+}
+@media screen and (max-width: 1600px) {
+  .s2 img {
+    margin-top: 0;
+  }
+
+  .s3 img {
+    margin-top: 3%;
+  }
+
+  .s5 img {
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .s3 img {
+    margin-top: 0;
+  }
+  .s4 img {
+    margin-top: 5%;
+  }
+  .s5 img {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .s4 img {
+    margin-top: 5%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .s4 img {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 760px) {
+  .wrapper {
+    max-width: 100%;
+    margin: 10% 15%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .wrapper {
+    max-width: 100%;
+    margin: 10% 10%;
+  }
+  .slider-row {
+    display: block;
+  }
+  .slider-dots {
+    max-width: 38%;
+    margin: 0 auto 20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .wrapper {
+    max-width: 100%;
+    margin: 10% 10%;
+  }
+  .slider-inner {
+    max-height: 25vh;
+  }
+  .slide img {
+    max-height: 25vh;
+  }
+  .slider-row {
+    display: block;
+  }
+  .slider-dots {
+    max-width: 58%;
+    margin: 0 auto 20px;
+  }
+  .s2 img {
+    border-radius: 10px;
+  }
+  .s4 img {
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .slider-dots {
+    max-width: 74%;
+  }
+}
